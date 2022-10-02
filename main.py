@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from multiprocessing import Process, Pool
-from html_builder import make_main_html, make_element_page
+from html_builder import make_main_html, make_element_page, make_tablet_page
 
 
 class chem_elem():
@@ -226,3 +226,5 @@ if __name__ == '__main__':
     make_main_html(mendeleev_tablet=mendeleev_tablet)
     for i in mendeleev_tablet:
         make_element_page(i)
+
+    make_tablet_page(mendeleev_tablet=mendeleev_tablet)
