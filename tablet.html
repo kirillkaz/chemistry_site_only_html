@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<body bgcolor=#F7F7F7>
-		<a href=main.html><img src=home.png width=40 height=40></a>
+		<fieldset>
+			<legend><font size=32><b>Меню</b></font></legend>
+			<table cellpadding=10 width=100%>				<tr>					<td><font size=14><a href=main.html>Главная</font></a></td>					<td align=right><font size=14>Таблица химических элементов</font></td>				</tr>			</table>		</fieldset>
+
 		<form>
 			<label>Минимальная атомная масса: <input value=0 type=number></label>
 			<br>
@@ -15,24 +18,106 @@
 			</p>
 			<p>
 			Сортировать элементы по:<br>
-			<input id="number" type=radio name="sort_table" value="number">
-			<label for="number">Номеру</label><br>
-			<input id="name" type=radio name="sort_table" value="name">
-			<label for="name">Имени</label><br>
-			<input id="period" type=radio name="sort_table" value="period">
-			<label for="period">Периоду</label><br>
-			<input id="group" type=radio name="sort_table" value="group">
-			<label for="group">Группе</label><br>
-			<input id="atom_mass" type=radio name="sort_table" value="atom_mass">
-			<label for="atom_mass">Атомной массе</label><br>
-			<input id="density" type=radio name="sort_table" value="density">
-			<label for="density">Плотности</label><br>
-			<input id="melting_temp" type=radio name="sort_table" value="melting_temp">
-			<label for="melting_temp">Температуре плавления</label><br>
-			<input id="boiling_temp" type=radio name="sort_table" value="boiling_temp">
-			<label for="boiling_temp">Температуре кипения</label>
+				<select>
+					<option>-------</option>
+					<option>Номеру</option>
+					<option>Имени</option>
+					<option>Периоду</option>
+					<option>Группе</option>
+					<option>Атомной массе</option>
+					<option>Плотности</option>
+					<option>Температуре плавления</option>
+					<option>Температуре кипения</option>
+				</select>
+				<select>
+					<option>-------</option>
+					<option>Номеру</option>
+					<option>Имени</option>
+					<option>Периоду</option>
+					<option>Группе</option>
+					<option>Атомной массе</option>
+					<option>Плотности</option>
+					<option>Температуре плавления</option>
+					<option>Температуре кипения</option>
+				</select>
+				<select>
+					<option>-------</option>
+					<option>Номеру</option>
+					<option>Имени</option>
+					<option>Периоду</option>
+					<option>Группе</option>
+					<option>Атомной массе</option>
+					<option>Плотности</option>
+					<option>Температуре плавления</option>
+					<option>Температуре кипения</option>
+				</select>
+				<select>
+					<option>-------</option>
+					<option>Номеру</option>
+					<option>Имени</option>
+					<option>Периоду</option>
+					<option>Группе</option>
+					<option>Атомной массе</option>
+					<option>Плотности</option>
+					<option>Температуре плавления</option>
+					<option>Температуре кипения</option>
+				</select>
+				<select>
+					<option>-------</option>
+					<option>Номеру</option>
+					<option>Имени</option>
+					<option>Периоду</option>
+					<option>Группе</option>
+					<option>Атомной массе</option>
+					<option>Плотности</option>
+					<option>Температуре плавления</option>
+					<option>Температуре кипения</option>
+				</select>
+				<select>
+					<option>-------</option>
+					<option>Номеру</option>
+					<option>Имени</option>
+					<option>Периоду</option>
+					<option>Группе</option>
+					<option>Атомной массе</option>
+					<option>Плотности</option>
+					<option>Температуре плавления</option>
+					<option>Температуре кипения</option>
+				</select>
+				<select>
+					<option>-------</option>
+					<option>Номеру</option>
+					<option>Имени</option>
+					<option>Периоду</option>
+					<option>Группе</option>
+					<option>Атомной массе</option>
+					<option>Плотности</option>
+					<option>Температуре плавления</option>
+					<option>Температуре кипения</option>
+				</select>
+				<select>
+					<option>-------</option>
+					<option>Номеру</option>
+					<option>Имени</option>
+					<option>Периоду</option>
+					<option>Группе</option>
+					<option>Атомной массе</option>
+					<option>Плотности</option>
+					<option>Температуре плавления</option>
+					<option>Температуре кипения</option>
+				</select>
 			</p>
-		</form>
+			<p><details><summary>Построить график:</summary>				<table width=25%>					<tr>						<td>по оси ОХ</td>						<td align=right>по оси ОУ</td>					</tr>					<tr>						<td><label for="number">Период</label>
+						<input id="ox" type=radio name="sort_tableox" value="some"></td>
+						<td align=right><input id="oy" type=radio name="sort_tableoy" value="some">
+						<label for="number">Количество элементов</label></td>
+					</tr>					<tr>						<td><label for="number">Группа</label>
+						<input id="ox" type=radio name="sort_tableox" value="some"></td>
+						<td align=right><input id="oy" type=radio name="sort_tableoy" value="some">
+						<label for="number">Средняя температура кипения</label></td>
+					</tr>					<tr>						<td></td>						<td align=right><input id="oy" type=radio name="sort_tableoy" value="some">
+						<label for="number">Средняя температура плавнения</label></td>
+					</tr>				</table>			</details></p>		</form>
 
 		<br>
 		<table border=1 width=100%>

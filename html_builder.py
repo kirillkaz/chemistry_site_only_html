@@ -5,7 +5,12 @@ def make_main_html(mendeleev_tablet):
     # блок меню
     html_str += '\t\t<fieldset>\n' \
                 '\t\t\t<legend><font size=32><b>Меню</b></font></legend>\n' \
-                '\t\t\t<a href=tablet.html><font size=14>Таблица химических элементов</font></a>' \
+                '\t\t\t<table cellpadding=10 width=100%>' \
+                '\t\t\t\t<tr>' \
+                '\t\t\t\t\t<td><font size=14>Главная</font></td>' \
+                '\t\t\t\t\t<td align=right><a href=tablet.html><font size=14>Таблица химических элементов</font></a></td>' \
+                '\t\t\t\t</tr>' \
+                '\t\t\t</table>' \
                 '\t\t</fieldset>\n\n'
     # блок галерея
     html_str += f'\t\t<fieldset>\n' \
@@ -123,7 +128,15 @@ def make_tablet_page(mendeleev_tablet):
     html_str = '<!DOCTYPE html>\n<html>\n'
     html_str += '\t<body bgcolor=#F7F7F7>\n'
 
-    html_str += '\t\t<a href=main.html><img src=home.png width=40 height=40></a>\n'
+    html_str += '\t\t<fieldset>\n' \
+                '\t\t\t<legend><font size=32><b>Меню</b></font></legend>\n' \
+                '\t\t\t<table cellpadding=10 width=100%>' \
+                '\t\t\t\t<tr>' \
+                '\t\t\t\t\t<td><font size=14><a href=main.html>Главная</font></a></td>' \
+                '\t\t\t\t\t<td align=right><font size=14>Таблица химических элементов</font></td>' \
+                '\t\t\t\t</tr>' \
+                '\t\t\t</table>' \
+                '\t\t</fieldset>\n\n'
 
     #форма
     html_str += f'\t\t<form>\n'
@@ -141,23 +154,68 @@ def make_tablet_page(mendeleev_tablet):
 
     html_str += f'\t\t\t<p>\n'
     html_str += f'\t\t\tСортировать элементы по:<br>\n'
-    html_str += f'\t\t\t<input id="number" type=radio name="sort_table" value="number">\n' \
-                f'\t\t\t<label for="number">Номеру</label><br>\n' \
-                f'\t\t\t<input id="name" type=radio name="sort_table" value="name">\n' \
-                f'\t\t\t<label for="name">Имени</label><br>\n' \
-                f'\t\t\t<input id="period" type=radio name="sort_table" value="period">\n' \
-                f'\t\t\t<label for="period">Периоду</label><br>\n' \
-                f'\t\t\t<input id="group" type=radio name="sort_table" value="group">\n' \
-                f'\t\t\t<label for="group">Группе</label><br>\n' \
-                f'\t\t\t<input id="atom_mass" type=radio name="sort_table" value="atom_mass">\n' \
-                f'\t\t\t<label for="atom_mass">Атомной массе</label><br>\n' \
-                f'\t\t\t<input id="density" type=radio name="sort_table" value="density">\n' \
-                f'\t\t\t<label for="density">Плотности</label><br>\n' \
-                f'\t\t\t<input id="melting_temp" type=radio name="sort_table" value="melting_temp">\n' \
-                f'\t\t\t<label for="melting_temp">Температуре плавления</label><br>\n' \
-                f'\t\t\t<input id="boiling_temp" type=radio name="sort_table" value="boiling_temp">\n' \
-                f'\t\t\t<label for="boiling_temp">Температуре кипения</label>\n'
+
+    for i in range(8):
+        html_str += f'\t\t\t\t<select>\n' \
+                    f'\t\t\t\t\t<option>-------</option>\n' \
+                    f'\t\t\t\t\t<option>Номеру</option>\n' \
+                    f'\t\t\t\t\t<option>Имени</option>\n' \
+                    f'\t\t\t\t\t<option>Периоду</option>\n' \
+                    f'\t\t\t\t\t<option>Группе</option>\n' \
+                    f'\t\t\t\t\t<option>Атомной массе</option>\n' \
+                    f'\t\t\t\t\t<option>Плотности</option>\n' \
+                    f'\t\t\t\t\t<option>Температуре плавления</option>\n' \
+                    f'\t\t\t\t\t<option>Температуре кипения</option>\n' \
+                    f'\t\t\t\t</select>\n'
+
+
+    # html_str += f'\t\t\t<input id="number" type=radio name="sort_table" value="number">\n' \
+    #             f'\t\t\t<label for="number">Номеру</label><br>\n' \
+    #             f'\t\t\t<input id="name" type=radio name="sort_table" value="name">\n' \
+    #             f'\t\t\t<label for="name">Имени</label><br>\n' \
+    #             f'\t\t\t<input id="period" type=radio name="sort_table" value="period">\n' \
+    #             f'\t\t\t<label for="period">Периоду</label><br>\n' \
+    #             f'\t\t\t<input id="group" type=radio name="sort_table" value="group">\n' \
+    #             f'\t\t\t<label for="group">Группе</label><br>\n' \
+    #             f'\t\t\t<input id="atom_mass" type=radio name="sort_table" value="atom_mass">\n' \
+    #             f'\t\t\t<label for="atom_mass">Атомной массе</label><br>\n' \
+    #             f'\t\t\t<input id="density" type=radio name="sort_table" value="density">\n' \
+    #             f'\t\t\t<label for="density">Плотности</label><br>\n' \
+    #             f'\t\t\t<input id="melting_temp" type=radio name="sort_table" value="melting_temp">\n' \
+    #             f'\t\t\t<label for="melting_temp">Температуре плавления</label><br>\n' \
+    #             f'\t\t\t<input id="boiling_temp" type=radio name="sort_table" value="boiling_temp">\n' \
+    #             f'\t\t\t<label for="boiling_temp">Температуре кипения</label>\n'
+
     html_str += f'\t\t\t</p>\n'
+    html_str += f'\t\t\t<p><details><summary>Построить график:</summary>' \
+                f'\t\t\t\t<table width=25%>' \
+                f'\t\t\t\t\t<tr>' \
+                f'\t\t\t\t\t\t<td>по оси ОХ</td>' \
+                f'\t\t\t\t\t\t<td align=right>по оси ОУ</td>' \
+                f'\t\t\t\t\t</tr>' \
+                \
+                f'\t\t\t\t\t<tr>' \
+                f'\t\t\t\t\t\t<td><label for="number">Период</label>\n' \
+                f'\t\t\t\t\t\t<input id="ox" type=radio name="sort_tableox" value="some"></td>\n' \
+                f'\t\t\t\t\t\t<td align=right><input id="oy" type=radio name="sort_tableoy" value="some">\n' \
+                f'\t\t\t\t\t\t<label for="number">Количество элементов</label></td>\n' \
+                f'\t\t\t\t\t</tr>' \
+                \
+                f'\t\t\t\t\t<tr>' \
+                f'\t\t\t\t\t\t<td><label for="number">Группа</label>\n' \
+                f'\t\t\t\t\t\t<input id="ox" type=radio name="sort_tableox" value="some"></td>\n' \
+                f'\t\t\t\t\t\t<td align=right><input id="oy" type=radio name="sort_tableoy" value="some">\n' \
+                f'\t\t\t\t\t\t<label for="number">Средняя температура кипения</label></td>\n' \
+                f'\t\t\t\t\t</tr>' \
+                \
+                f'\t\t\t\t\t<tr>' \
+                f'\t\t\t\t\t\t<td></td>' \
+                f'\t\t\t\t\t\t<td align=right><input id="oy" type=radio name="sort_tableoy" value="some">\n' \
+                f'\t\t\t\t\t\t<label for="number">Средняя температура плавнения</label></td>\n' \
+                f'\t\t\t\t\t</tr>' \
+                f'\t\t\t\t</table>' \
+                f'\t\t\t</details></p>'
+
     html_str += f'\t\t</form>\n\n'
 
     html_str += f'\t\t<br>\n'
